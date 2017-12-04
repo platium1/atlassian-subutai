@@ -5,26 +5,38 @@
     {
       "name": "jira",
       "template": "jira@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN-GROUP",
+      "peer_group": "ATLASSIAN-JIRA",
       "size": "HUGE"
     },
     {
       "name": "confluence",
       "template": "confluence@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN-GROUP",
+      "peer_group": "ATLASSIAN-CONFLUENCE",
       "size": "HUGE"
     },
     {
       "name": "postgresql",
       "template": "postgresql@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN-GROUP",
+      "peer_group": "ATLASSIAN-DB",
       "size": "HUGE"
     }
 
   ],
   "peerGroups": [
     {
-      "name": "ATLASSIAN-GROUP",
+      "name": "ATLASSIAN-DB",
+      "pricingPref": {
+        "maxPrice": "${maxPrice}"
+      }
+    },
+    {
+      "name": "ATLASSIAN-JIRA",
+      "pricingPref": {
+        "maxPrice": "${maxPrice}"
+      }
+    },
+    {
+      "name": "ATLASSIAN-CONFLUENCE",
       "pricingPref": {
         "maxPrice": "${maxPrice}"
       }
