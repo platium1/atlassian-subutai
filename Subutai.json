@@ -4,19 +4,19 @@
   "nodes": [
     {
       "name": "jira",
-      "template": "jira",
+      "template": "jira@280dcda67a67d071970ff838d0331c33c0c04710",
       "peer_group": "ATLASSIAN-GROUP",
       "size": "HUGE"
     },
     {
       "name": "confluence",
-      "template": "confluence",
+      "template": "confluence@280dcda67a67d071970ff838d0331c33c0c04710",
       "peer_group": "ATLASSIAN-GROUP",
       "size": "HUGE"
     },
     {
       "name": "postgresql",
-      "template": "postgresql",
+      "template": "postgresql@280dcda67a67d071970ff838d0331c33c0c04710",
       "peer_group": "ATLASSIAN-GROUP",
       "size": "HUGE"
     }
