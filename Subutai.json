@@ -44,8 +44,8 @@
   ],
   "sshKey": "ztimur",
   "configuration": {
-    "playbook": "https://github.com/platium/commands/archive/master.zip",
-    "script": "main1.yml",
+    "playbook": "https://github.com/platium/atlassian-subutai/archive/master.zip",
+    "script": "main.yml",
     "groups": [
       {
         "name": "db",
