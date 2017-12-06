@@ -3,3 +3,6 @@
   tasks:
   - name: Copy dbconfig xml
     template: src="/tmp/atlassian-subutai-master/dbconfig.xml.j2"   dest="/var/atlassian/application-data/jira/dbconfig.xml"   mode=777
+  - name: Restart jetty
+    service: name=jira state=started
+
