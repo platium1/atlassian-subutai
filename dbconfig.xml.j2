@@ -6,7 +6,7 @@
   <database-type>postgres72</database-type>
   <schema-name>public</schema-name>
   <jdbc-datasource>
-    <url>jdbc:postgresql://{{ansible_ssh_host}}:5432/jiradb</url>
+    <url>jdbc:postgresql://{% for h in groups['db'] %}{{ hostvars[h].ansible_ssh_host }}{% endfor %}:5432/jiradb</url>
     <driver-class>org.postgresql.Driver</driver-class>
     <username>jirauser</username>
     <password>jirapassword</password>
