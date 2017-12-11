@@ -7,6 +7,13 @@
     template: src="/tmp/atlassian-subutai-master/dbconfig.xml.j2"   dest="/var/atlassian/application-data/jira/dbconfig.xml"   mode=777
   - name: start jira
     shell: /etc/init.d/jira start
-    
-    
+
+- hosts: confluence
+  tasks: 
+  - name: start jira
+    shell: /etc/init.d/confluence stop
+  - name: Copy dbconfig xml
+    template: src="/tmp/atlassian-subutai-master/confluence.cfg.xml.j2"   dest="/var/atlassian/application-data/confluence/"   mode=777
+  - name: start jira
+    shell: /etc/init.d/confluence restart
 
