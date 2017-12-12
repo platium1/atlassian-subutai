@@ -5,29 +5,42 @@
     {
       "name": "jira",
       "template": "jira@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN",
+      "peer_group": "ATLASSIAN-JIRA",
       "size": "LARGE"
     },
     {
       "name": "confluence",
       "template": "confluence@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN",
+      "peer_group": "ATLASSIAN-CONFLUENCE",
       "size": "LARGE"
     },
     {
       "name": "postgresql",
       "template": "postgresql@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN",
+      "peer_group": "ATLASSIAN-DB",
       "size": "LARGE"
     }
   ],
   "peerGroups": [
     {
-      "name": "ATLASSIAN",
+      "name": "ATLASSIAN-JIRA",
+      "pricingPref": {
+        "maxPrice": "${maxPrice}"
+      }
+    },
+    {
+      "name": "ATLASSIAN-CONFLUENCE",
+      "pricingPref": {
+        "maxPrice": "${maxPrice}"
+      }
+    },
+    {
+      "name": "ATLASSIAN-DB",
       "pricingPref": {
         "maxPrice": "${maxPrice}"
       }
     }
+    
   ],
   "sshKey": "ztimur",
   "configuration": {
