@@ -13,7 +13,7 @@
   - name: start jira
     shell: /etc/init.d/confluence stop
   - name: Copy dbconfig xml
-    template: src="/tmp/atlassian-subutai-master/confluence.cfg.xml.j2"   dest="/var/atlassian/application-data/confluence/"   mode=777
+    template: src="/tmp/atlassian-subutai-master/confluence.cfg.xml.j2"   dest="/var/atlassian/application-data/confluence/confluence.cfg.xml"   mode=777
   - name: start jira
     shell: /etc/init.d/confluence restart
 
