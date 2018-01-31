@@ -1,46 +1,64 @@
 {
-  "name": "${environmentName}",
+  "name": "${envName}",
   "description": "Subutai Atlassian integration",
-  "nodes": [
+  "version": "1.0.1",
+  "author": "Sydyk",
+  "containers": [
     {
-      "name": "jira",
+      "hostname": "jira",
       "template": "jira@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN",
-      "size": "LARGE"
+      "peer-criteria": "ATLASSIAN",
+      "size": "${mysqlDBtype}"
     },
     {
-      "name": "postgresql",
+      "hostname": "postgresql",
       "template": "postgresql@280dcda67a67d071970ff838d0331c33c0c04710",
-      "peer_group": "ATLASSIAN",
-      "size": "LARGE"
+      "peer-criteria": "ATLASSIAN",
+      "size": "${jiracontainertype}",
+      
     }
   ],
-  "peerGroups": [
+  "peer-criteria": [
     {
-      "name": "ATLASSIAN",
-      "pricingPref": {
-        "maxPrice": "${maxPrice}"
-      }
+      "name": "ATLASSIAN"
     }
-    
   ],
-  "sshKey": "sydyk",
-  "configuration": {
-    "playbook": "https://github.com/platium/atlassian-subutai/archive/master.zip",
-    "script": "main.yml",
+  "ansible-configuration": {
+    "source-url": "https://github.com/platium/atlassian-subutai/archive/master.zip",
+    "ansible-playbook": "main.yml",
     "groups": [
       {
         "name": "db",
-        "nodes_name": [
+        "hostnames": [
           "postgresql"
         ]
       },
       {
         "name": "jira",
-        "nodes_name": [
+        "hostnames": [
           "jira"
         ]
       }
     ]
+  },
+  "user-variables": {
+    "envName": {
+      "description": "Enter your environment name",
+      "type": "string",
+      "default": "mattermost env",
+      "validation": "[a-zA-Z0-9]+"
+    },
+    "mysqlDBtype": {
+      "description": "You can set LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "LARGE,HUGE"
+    },
+    "jiracontainertype": {
+      "description": "You can set LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "LARGE,HUGE"
+    }
   }
 }
