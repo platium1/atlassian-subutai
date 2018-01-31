@@ -14,13 +14,13 @@
       "hostname": "postgresql",
       "template": "postgresql@280dcda67a67d071970ff838d0331c33c0c04710",
       "peer-criteria": "ATLASSIAN",
-      "size": "${jiracontainertype}",
-      
+      "size": "${jiracontainertype}"
     }
   ],
   "peer-criteria": [
     {
-      "name": "ATLASSIAN"
+      "name": "ATLASSIAN",
+      "max-price": "${maxPeersPrice}"
     }
   ],
   "ansible-configuration": {
@@ -59,6 +59,13 @@
       "type": "enum",
       "default": "SMALL",
       "validation": "LARGE,HUGE"
-    }
+    },
+    "maxPeersPrice": {
+      "description": "Enter max price of peer you are looking for",
+      "type": "int",
+      "default": "8080",
+      "validation": "\\d+"
+    },
+    
   }
 }
