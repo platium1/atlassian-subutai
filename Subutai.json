@@ -8,7 +8,15 @@
       "hostname": "jira",
       "template": "jira@280dcda67a67d071970ff838d0331c33c0c04710",
       "peer-criteria": "ATLASSIAN",
-      "size": "${mysqlDBtype}"
+      "size": "${mysqlDBtype}",
+      "port-mapping": [
+        {
+          "protocol": "HTTP",
+          "domain": "${domain}",
+          "internal-port": "8065",
+          "external-port": "80"
+        }
+      ]
     },
     {
       "hostname": "postgresql",
@@ -53,6 +61,12 @@
       "type": "enum",
       "default": "SMALL",
       "validation": "LARGE,HUGE"
+    },
+    "domain": {
+      "description": "Select your domain or create new one",
+      "type": "domain",
+      "default": "mattermost.envs.subutai.cloud",
+      "validation": "[a-zA-Z0-9.-]+"
     },
     "mattermostContainerType": {
       "description": "You can set LARGE,HUGE",
