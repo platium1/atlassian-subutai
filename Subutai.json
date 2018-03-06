@@ -43,12 +43,14 @@
     "groups": [
       {
         "name": "db",
+         "python-interpreter": "/usr/bin/python3",
         "hostnames": [
           "postgresql"
         ]
       },
       {
         "name": "jira",
+         "python-interpreter": "/usr/bin/python3",
         "hostnames": [
           "jira"
         ]
