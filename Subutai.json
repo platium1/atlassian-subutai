@@ -20,7 +20,7 @@
     },
     {
       "hostname": "postgresql",
-      "template": "postgresql@1297432ca164899d498c80dd4904264128210370",
+      "template": "postgresql",
       "peer-criteria": "ATLASSIAN",
       "size": "${mattermostContainerType}"
     }
