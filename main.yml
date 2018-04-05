@@ -2,9 +2,11 @@
 - hosts: jira
   tasks:
   - name: stop jira
-    shell: /etc/init.d/jira stop
+    service: name=jira state=stopped
+    
   - name: Copy dbconfig xml
     template: src="/root/atlassian-subutai-master/dbconfig.xml.j2"   dest="/var/atlassian/application-data/jira/dbconfig.xml"   mode=777
+  
   - name: Restart jetty
     service: name=jira state=started
 
